@@ -1,0 +1,15 @@
+<h2 class="title">Edit blog</h2>
+
+<form class='form' #f='ngForm' (ngSubmit)='updateBlog()'>
+  <div class='form-group'>
+    <label for='title'>Title</label>
+    <input name='title' id='title' class='form-control' [(ngModel)]='blog.title'/>
+  </div>
+  <div class='form-group'>
+    <label for='body'>Body</label>
+    <textarea name='body' id='body' class='form-control' [tinyEditor] [(ngModel)]='blog.body' [selector]="'body'" (ngModelChange)="onModelChange()"></textarea>
+  </div>
+  <div class='form-group'>
+    <input type="submit" name="submit" value='Update' class="btn btn-primary" />
+  </div>
+</form>

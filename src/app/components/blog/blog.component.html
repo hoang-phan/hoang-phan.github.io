@@ -1,0 +1,16 @@
+<div class="card">
+  <div class='cart-block'>
+    <h4 class='card-title'>{{ blog.title }}</h4>
+    <div class='card-body'>
+      <div class='card-text' [innerHTML]="blog.body"></div>
+      <p class='card-links text-center' *ngIf='isWriter'>
+        <a [routerLink]="['/blog', blog.id, 'edit']" class='btn btn-info'>
+          <i class="glyphicon glyphicon-pencil"></i> Edit
+        </a>
+        <a class='btn btn-danger' (click)='delete()'>
+          <i class="glyphicon glyphicon-trash"></i> Delete
+        </a>
+      </p>
+    </div>
+  </div>
+</div>

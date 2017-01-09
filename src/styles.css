@@ -1,1 +1,89 @@
-/* You can add global styles to this file, and also import other style files */
+.blinking-cursor {
+  font-weight: 100;
+  color: #2E3D48;
+  animation: 1s blink step-end infinite;
+}
+
+#computer:not(.showing) {
+  transform: scale(5);
+  opacity: 0;
+  transition: transform 3s ease-out, opacity 1s;
+}
+
+#computer {
+  position: fixed;
+  width: 612px;
+  height: 490px;
+  top: 200px;
+  left: 50%;
+  margin-left: -306px;
+}
+
+.falling, .spinning {
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.falling {
+  animation-name: drop;
+}
+
+.spinning {
+  animation-name: spin;
+  animation-duration: 4s;
+}
+
+#code p {
+  margin: 0 0 5px;
+}
+
+#code .kw, #code .op {
+  color: #0000aa;
+}
+
+#code .sl {
+  color: #aa5500;
+}
+
+#code .mn {
+  color: #00aa00;
+}
+  
+#code .iv {
+  color: #aa0000;
+}
+
+#code .sy {
+  color: #aa00aa;
+}
+
+#code .cn {
+  color: #00aaaa;
+}
+
+@keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@keyframes drop {
+  from {
+    top: 0;
+  }
+  to {
+    top: 900px;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,58 @@
+<div class="layer-background">
+  <div class="container">
+    <div class="layer-note">
+      <div class='viewport'>
+        <svg>
+          <svg:g [attr.transform]='backgroundPos()' [ngClass]='dandelionClass()' *ngIf='scrollTop < 15500'>
+            <svg:path class='dandelion-part'
+                  fill="none" stroke="black" stroke-width="3"
+                  [style.strokeDasharray]="part[0]" [style.strokeDashoffset]="offset(part) * part[0]"
+                  [attr.d]="part[3]" *ngFor="let part of dandelionParts" />
+            <svg:path class='petal'
+                  fill="none" stroke="black" stroke-width="1.5"
+                  *ngFor="let petal of petals1"
+                  d="M 227.69,209.62
+                     C 227.66,210.26 220.45,200.37 220.50,199.38M 209.88,199.75
+                     C 215.12,204.00 226.25,199.25 225.50,190.12M 214.06,195.44
+                     C 221.44,202.88 221.94,200.25 220.62,191.38" [attr.transform]='petalPos(petal, "244 216")'
+                     [style.strokeDasharray]="51.7" [style.strokeDashoffset]="offset(petal) * 51.7"/>
+            <svg:path class='petal'
+                  fill="none" stroke="black" stroke-width="1.5"
+                  *ngFor="let petal of petals2"
+                  d="M 221.50,154.50
+                     C 220.41,165.77 240.68,175.08 242.25,158.88M 229.12,159.12
+                     C 234.72,162.52 239.69,199.53 238.00,198.50M 232.12,151.12M 233.12,148.88
+                     C 234.60,149.97 234.02,167.42 233.38,167.12M 237.00,151.50
+                     C 237.67,152.44 235.67,168.91 234.25,167.12M 237.69,200.25
+                     C 238.04,201.51 238.84,201.03 239.25,200.06
+                       239.81,198.09 237.09,182.53 236.75,182.44
+                       236.67,182.79 237.42,199.39 237.69,200.25 Z" [attr.transform]='petalPos(petal, "245 212")'
+                     [style.strokeDasharray]="104.7" [style.strokeDashoffset]="offset(petal) * 104.7"/>
+            <svg:g *ngFor="let point of [[247, 220, 6400], [242, 217, 6600], [235, 213, 6800], [237, 205, 7000], [241, 209, 7200], [249, 209, 7400], [253, 215, 7600], [255, 222, 7800]]">
+              <svg:circle r="1.5" fill="black" [attr.cx]="point[0]" [attr.cy]="point[1]" *ngIf="scrollTop > point[2]"/>
+            </svg:g>
+            <svg:path class='computer-part'
+                  fill="none" stroke="black" stroke-width="3"
+                  [style.strokeDasharray]="part[0]" [style.strokeDashoffset]="offset(part) * part[0]"
+                  [attr.d]="part[3]" *ngFor="let part of computerParts" />
+          </svg:g>
+          <svg:g *ngIf='scrollTop < 17500'>
+            <svg:rect fill="none" stroke="black" stroke-width="2" [attr.x]='capture[0]' [attr.y]='capture[1]' width='100' height='100' [ngClass]='captureClass(capture)' *ngFor='let capture of captures' [attr.transform]='cTransform(capture)'/>
+          </svg:g>
+          <svg:g *ngIf='scrollTop > 15900'>
+            <svg:path class='petal-part'
+                  fill="none" stroke="black" stroke-width="3"
+                  [style.strokeDasharray]="part[0]" [style.strokeDashoffset]="offset(part) * part[0]"
+                  [attr.d]="part[3]" *ngFor="let part of petalParts" />
+            <svg:g *ngFor='let bulbParts of bulbs'>
+              <svg:path class='bulb-part'
+                  fill="none" stroke="black" stroke-width="3"
+                  [style.strokeDasharray]="part[0]" [style.strokeDashoffset]="offset(part) * part[0]"
+                  [attr.d]="part[3]" *ngFor="let part of bulbParts" />
+            </svg:g>
+          </svg:g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+a[routerLink] {
+  cursor: pointer;
+}
+
+.center-nav {
+  float: none;
+  display: inline-block;
+}
+
+li.logo > a {
+  font-size: 60px;
+  letter-spacing: -16px;
+  font-weight: bold;
+}

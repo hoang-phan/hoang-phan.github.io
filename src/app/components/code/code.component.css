@@ -1,0 +1,17 @@
+#code {
+  width: 500px;
+  height: 250px;
+  top: 260px;
+  left: 50%;
+  margin-left: -250px;
+  position: fixed;
+}
+
+#code {
+  font-family: 'Droid Sans Mono', monospace;
+  transition: opacity 3s;
+}
+
+#code.transparent {
+  opacity: 0;
+}
